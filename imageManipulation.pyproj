@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{84d7233f-04af-446f-813c-a8591462e1fe}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>caseSpecific\convertShutterstockEps.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="addTextBlockToImage.py" />
+    <Compile Include="caseSpecific\convertShutterstockEps.py" />
+    <Compile Include="convertImage.py" />
+    <Compile Include="convert_Windows_to_WSL_path.py" />
+    <Compile Include="createGif.py" />
+    <Compile Include="caseSpecific\processChapter19.py" />
+    <Compile Include="convertWindowsPathToWSL.py" />
+    <Compile Include="renameFilesTemp.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="caseSpecific\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
