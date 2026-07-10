@@ -1,16 +1,15 @@
 import convertImage
 import os
 
-#shutterDir = "/mnt/d/Data/My Resources/Shutterstock/TEXTURES"
-#imageName = "shutterstock_252115858"
-#path = shutterDir+"/"+imageName
-#convertImage.convertImage(path, "eps", "jpg", 500)
+'''
+Convert all EPS files in a directory to JPG files with a specified width.
+'''
 
-shutterDir = "D:/Data/My Resources/Shutterstock/TEXTURES"
+shutterDir = "D:/Data/My Resources/Shutterstock/BACKGROUNDS"
 os.chdir(shutterDir)
 extension = "eps"
 num_converts = 0
 for filename in os.listdir("."):
     if filename.endswith(extension):
-        convertImage.convertImage(filename, "jpg", 500)
+        convertImage.convertImage(filepath=filename, outputFormat="jpg", width=5000)
         num_converts += 1

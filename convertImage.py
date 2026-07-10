@@ -4,12 +4,14 @@ import subprocess
 import shlex
 
 import convertWindowsPathToWSL
+from convert_Windows_to_WSL_path import convert_Windows_to_WSL_path
 
 def convertImage(filepath, outputFormat, width):
     '''
     Convert an image file to a specified format using ImageMagick with a specified width.
     '''
-    filepath = convertWindowsPathToWSL.convertWindowsPathToWSL(filepath)
+    #filepath = convertWindowsPathToWSL.convertWindowsPathToWSL(filepath)
+    filepath = convert_Windows_to_WSL_path(filepath)
 
     # Separate out the directory and filename
     directory = os.path.dirname(filepath)

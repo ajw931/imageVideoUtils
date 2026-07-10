@@ -1,3 +1,7 @@
+'''
+THIS ONE IS PROBABLY NOT NEEDED ANYMORE.
+convert_Windows_to_WSL_path.py IS PROBABLY BETTER.
+'''
 
 def convertWindowsPathToWSL(path):
     # Check if the filename is a Windows path. If so, convert it to a WSL path.
