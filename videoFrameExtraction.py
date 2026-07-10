@@ -199,10 +199,10 @@ def main():
                         help='Skip writing the full-size frames entirely, keeping only the '
                              'resized ones (default: keep both)')
     parser.add_argument('--width', type=int, default=None,
-                        help='Width of the resized frames; height derived from aspect ratio '
-                             '(default: 2400 if neither --width nor --height is given)')
+                        help='Width of the resized frames; height derived from aspect ratio')
     parser.add_argument('--height', type=int, default=None,
-                        help='Height of the resized frames; width derived from aspect ratio')
+                        help='Height of the resized frames; width derived from aspect ratio '
+                             '(default: 2400 if neither --width nor --height is given)')
     parser.add_argument('--blur', type=float, default=0.25,
                         help='smartblur luma strength applied to all frames; 0 disables (default: 0.25)')
     parser.add_argument('--jobs', type=int, default=max(1, (os.cpu_count() or 2) // 2),
@@ -213,7 +213,7 @@ def main():
     if args.width is not None and args.height is not None:
         parser.error('provide either --width or --height, not both')
     if args.width is None and args.height is None:
-        args.width = 2400
+        args.height = 2400
 
     srcDir = Path(args.directory)
     fullSetsDir = srcDir / FULL_SETS
