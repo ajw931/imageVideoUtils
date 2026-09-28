@@ -85,7 +85,8 @@ def main():
 
     with tempfile.NamedTemporaryFile('w', suffix='.txt', delete=False) as listFile:
         for video in videos:
-            listFile.write(f"file '{video.resolve()}'\n")
+            escaped = str(video.resolve()).replace("'", "'\\''")
+            listFile.write(f"file '{escaped}'\n")
         listPath = listFile.name
 
     try:
